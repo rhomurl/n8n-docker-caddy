@@ -70,6 +70,7 @@ services:
     image: redis:8.2
     container_name: n8n-redis
     restart: always
+    commannd: redis-server --replicaof no one --maxmemory-policy noeviction
     volumes:
       - redis_data:/data
     ports:
